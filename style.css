@@ -1,0 +1,134 @@
+:root{
+    --Box-Bg: #181818;
+    --Defualt-Bg: black;
+    --Input-Bg: #101010;
+    --hover-Color: #00ce00;
+    --Text-Color: #9d9d9d;
+    --Font-Family: Verdana, Geneva, Tahoma, sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+    font-size: 16px;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--Defualt-Bg);
+    position: relative;
+}
+main::before{
+    content: "";
+    width: 100%;
+    height: 200px;
+    box-shadow: 4px 4px 100px var(--hover-Color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--hover-Color);
+    animation: beforeAnm 2s linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.cover{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(16,1fr);
+    grid-template-rows: repeat(7,1fr);
+    gap: 2px;
+}
+
+.cover div{
+    z-index: 2;
+    background-color: var(--Box-Bg);
+    transition: 1.5s;
+}
+.cover div:hover{
+    background-color: var(--hover-Color);
+    transition: 0s;
+}
+@keyframes  beforeAnm {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(100vh);
+    }
+}
+.login-con{
+    width: 450px;
+    height: 400px;
+    padding: 40px;
+    z-index: 999;
+    background-color: var(--Box-Bg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 4px 4px 100px var(--Defualt-Bg);
+}
+.login-con h1{
+    color: var(--hover-Color);
+    font-family: var(--Font-Family);
+    font-size: 2,1rem;
+    text-transform: uppercase;
+}
+.login-con div{
+    width: 100%;
+}
+.login-con div input{
+    width: 100%;
+    padding: 10px 8px;
+    outline: none;
+    background-color: var(--Input-Bg);
+    border: none;
+    font-size: 1.1rem;
+    color: var(--Text-Color);
+    font-family: var(--Font-Family);
+}
+.login-con .forgot{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.forgot a{
+    font-size: 18px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-family: var(--Font-Family);
+}
+.forgot a:last-child{
+    color: var(--hover-Color);
+}
+.login-con button{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    color: white;
+    background-color: var(--hover-Color);
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.login-con button:hover{
+    background-color: #00ce007a;
+}
+@media (max-width: 768px) {
+    .login-con{
+        width: 350px;
+    height: 400px;
+    padding: 30px;
+    }
+}
