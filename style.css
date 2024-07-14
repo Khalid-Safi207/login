@@ -120,11 +120,8 @@ main::before{
     text-transform: uppercase;
     border: none;
     cursor: pointer;
-    transition: 0.5s;
 }
-.login-con button:hover{
-    background-color: #00ce007a;
-}
+
 @media (max-width: 768px) {
     .login-con{
         width: 350px;
